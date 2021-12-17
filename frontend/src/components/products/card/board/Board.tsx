@@ -1,9 +1,11 @@
 import React from 'react';
 import ProductsCard from '../Card';
 
+interface props {
+    Products:{}
+}
 
-const Board = (props) => {
-    const {Products} = props.Products
+const Board = (props:props) => {
 
     const renderCards = (produtos) =>{
         
@@ -14,7 +16,7 @@ const Board = (props) => {
     }
     return (  
         <div className="row center"> 
-            {renderCards(Products)}
+            {renderCards(props.Products)}
         </div>
         
 

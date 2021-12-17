@@ -10,16 +10,16 @@ interface Products{
 const ProductsCard = (props:Products) => {
     return(
         <div className="card">
-            <a href= {`product/${props.id}`}>
-                <img className="medium" src={props.imageUrl} alt="b"/>
+            <a href= {`product/${props?.id}`}>
+                <img className="medium" src={props?.imageUrl} alt="b"/>
             </a>
             <div className="card-body">
-                <a href= {`product/${props.id}`}>
-                    <h2>{props.nome}</h2>
+                <a href= {`product/${props?.id}`}>
+                    <h2>{props?.nome}</h2>
                 </a>
             </div>
             <div className="price">
-                {props.preco}
+                {props?.preco}
             </div>    
          </div>
       )  
