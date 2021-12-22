@@ -1,25 +1,30 @@
 import React from 'react';
 
-interface Products{
-    nome:string 
-    preco:string 
-    imageUrl:string 
-    id:string 
+
+interface propsI{
+ Products:{
+    nome:string;
+    imageUrl:string;
+    id: number;
+    preco:number
+ }  
+    
 }
 
-const ProductsCard = (props:Products) => {
+const ProductsCard = (props:propsI) => {
+    const {Products} = props
     return(
         <div className="card">
-            <a href= {`product/${props?.id}`}>
-                <img className="medium" src={props?.imageUrl} alt="b"/>
+            <a href= {`product/${Products?.id}`}>
+                <img className="medium" src={Products.imageUrl} alt="b"/>
             </a>
             <div className="card-body">
-                <a href= {`product/${props?.id}`}>
-                    <h2>{props?.nome}</h2>
+                <a href= {`product/${Products.id}`}>
+                    <h2>{Products.nome}</h2>
                 </a>
             </div>
             <div className="price">
-                {props?.preco}
+                {Products.preco}
             </div>    
          </div>
       )  

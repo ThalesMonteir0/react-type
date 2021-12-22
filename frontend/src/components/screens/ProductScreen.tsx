@@ -2,12 +2,12 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import SpecificProduct from './SpecificProduct';
 
-type blaID = {
+type idInterface = {
     id: string
 }
 
 export default function ProductScreen(){
-    const { id } = useParams<blaID>()
+    const { id } = useParams<idInterface>()
     const stringId = id as string
 
     return(

@@ -1,19 +1,19 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
 
-interface Props {
+interface propsIdInterface {
     stringId:string
 }
-interface Products{
+interface productsInterfaceI{
     nome:string 
     preco:string 
     img:string 
     desc:string
 }
 
-export default function SpecificProduct (props:Props) {
+export default function SpecificProduct (props:propsIdInterface) {
     const id = props.stringId
-    const [Products, setProducts] = useState<Products>();
+    const [Products, setProducts] = useState<productsInterfaceI>();
     useEffect(() =>{
         axios.get('http://localhost:3001/'+id)
             .then((response) =>{
