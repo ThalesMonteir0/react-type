@@ -24,7 +24,7 @@ const ProductsCard = (props:propsI) => {
                 </a>
             </div>
             <div className="price">
-                {Products.preco}
+               R$ {Products.preco}
             </div>    
          </div>
       )  

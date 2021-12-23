@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import Board from '../products/card/board/Board';
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios'
 
-
-
-export interface productsInterface { 
-    Products:{
-        nome: string;
-        preco: number;
-        imageUrl: string;
-        id: number;}
-   
+type produto = {
+    nome: string
+    preco: number
+    id: number
+    imageUrl: string
+    
 }
 
 export default function HomeScreen() {
-    const [Products, setProducts] = useState<productsInterface>();
+    const [Products, setProducts] = useState<produto[]>([]);
     useEffect(() =>{
         axios.get('http://localhost:3001/')
-            .then((response: AxiosResponse) =>{
+            .then((response) =>{
                 setProducts(response.data);
             }); 
     }, []);
-   
- 
+    console.log(Products);
+    
+    
     return(
-        <Board  Products={Products!}/>
+        <Board  Products={Products}/>
     )
 }

@@ -20,6 +20,8 @@ export default function SpecificProduct (props:propsIdInterface) {
                 setProducts(response.data);
             }); 
     }, [id]);
+    console.log(Products);
+    
     return(
         <div>
             <div className='row top'>
@@ -32,7 +34,7 @@ export default function SpecificProduct (props:propsIdInterface) {
                             <h1 className='large'>{Products?.nome}</h1>
                         </li>
                         <li>
-                            <h1>preço: ${Products?.preco}</h1>
+                            <h1>preço: {Products?.preco}</h1>
                         </li>
                         <li>
                            <h1>Descrição:{Products?.desc}</h1> 

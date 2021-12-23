@@ -1,25 +1,24 @@
 import React from 'react';
 import ProductsCard from '../Card';
-import { productsInterface } from '../../../screens/HomeScreen'
 
-interface propsInterface{
-    Products: productsInterface
+type produto = {
+    nome: string
+    preco: number
+    id: number
+    imageUrl: string
+    
 }
 
 interface obInterface {
-    Products:{ 
-        nome: string
-        preco: number
-        id: number
-        imageUrl: string}
+     Products: produto[]
     }
     
-
-
-
-const Board = (props:propsInterface) => {
+const Board = (props:obInterface) => {
+    console.log(props);
     
-    const renderCards = (produtos:obInterface) =>{
+    
+    const renderCards = (data:obInterface) =>{
+        const produtos = data.Products
 
         return(produtos.map(produto=> {
             return(<ProductsCard Products={produto}></ProductsCard>)
@@ -28,7 +27,7 @@ const Board = (props:propsInterface) => {
     }
     return (  
         <div className="row center"> 
-            {renderCards(props.Products)}
+            {renderCards(props)}
         </div>
         
 
